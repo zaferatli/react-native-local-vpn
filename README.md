@@ -1,21 +1,27 @@
 # react-native-local-vpn
 
-React Native Android Local VPN Package
+React Native Android Local VPN Package based on hexene/LocalVPN but its not work properly, after visiting couple website
+tcp pipeline broking [related issue](https://github.com/hexene/LocalVPN/issues/18).
+
+after tried fix i brake up proje, and publish after delete it all if someone try to fix can contribute this project.
 
 ## Installation
 
 ```sh
-npm install react-native-local-vpn
+yarn add react-native-local-vpn
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'react-native-local-vpn';
+import LocalVPN from 'react-native-local-vpn';
 
 // ...
-
-const result = await multiply(3, 7);
+LocalVpn.prepareLocalVPN().then((res) => {
+  if (res) {
+    LocalVpn.connectLocalVPN();
+  }
+});
 ```
 
 ## Contributing

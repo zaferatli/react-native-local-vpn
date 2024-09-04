@@ -17,6 +17,12 @@ const LocalVpn = NativeModules.LocalVpn
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return LocalVpn.multiply(a, b);
+export function prepareLocalVPN(): Promise<number> {
+  return LocalVpn.prepareLocalVPN();
+}
+export function connectLocalVPN(): void {
+  return LocalVpn.connectLocalVPN();
+}
+export function disconnectLocalVPN(): void {
+  return LocalVpn.disconnectLocalVPN();
 }
